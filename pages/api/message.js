@@ -1,6 +1,6 @@
 import Pusher from 'pusher'
 
-export default function handler(req, res) {
+export default async function handler(req, res) {
   switch (req.method) {
     case 'GET':
       res.status(200).json({ name: 'John Doe' })
@@ -17,7 +17,7 @@ export default function handler(req, res) {
         cluster: "us3",
       });
       
-      pusher.trigger("messages", "message-event", {
+      await pusher.trigger("messages", "message-event", {
         message
       });
 
