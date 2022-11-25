@@ -30,11 +30,9 @@ export default function Home() {
   }, [])
   
   async function sendMessage(message) {
-    console.log(message)
     if (message.text) {
       handleMadness()
-      const response = await axios.post('/api/message', { message })
-      console.log(response)
+      await axios.post('/api/message', { message })
     }
   }
 
