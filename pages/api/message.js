@@ -16,12 +16,14 @@ export default async function handler(req, res) {
         secret: "c9dbefd63c66bea5a757",
         cluster: "us3",
       });
-      
+
+      const color = Math.floor(Math.random()*16777215).toString(16)
+  
       await pusher.trigger("messages", "message-event", {
-        message
+        message, color
       });
 
-      res.status(200).json({ message })
+      res.status(200).json({ message, color })
       break
     default:
       res.setHeader('Allow', ['GET', 'POST'])

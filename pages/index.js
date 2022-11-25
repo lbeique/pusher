@@ -21,6 +21,7 @@ export default function Home() {
     const channel = pusher.subscribe(channelName);
     channel.bind('message-event', function(data) {
       setMessages(messages => [...messages, data.message])
+      setColor(data.color)
     });
 
     return () => {
@@ -31,15 +32,9 @@ export default function Home() {
   
   async function sendMessage(message) {
     if (message.text) {
-      handleMadness()
       await axios.post('/api/message', { message })
     }
   }
-
-  function handleMadness() {
-    setColor(Math.floor(Math.random()*16777215).toString(16))
-  }
-
 
   return (
     <div className={styles.container} style={{backgroundColor: `#${color}`}}>
@@ -54,7 +49,7 @@ export default function Home() {
 
         <MessageContainer messages={messages}></MessageContainer>
         <MessageForm sendMessage={sendMessage}></MessageForm>
-        <Button value={'Push me?'} handleClick={handleMadness}></Button>
+        {/* <Button value={'Push me?'} handleClick={handleMadness}></Button> */}
 
       </main>
     </div>
