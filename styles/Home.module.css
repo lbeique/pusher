@@ -10,6 +10,26 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 1rem;
+}
+
+.button {
+  background-color: #304163;
+  color: #fff;
+  border: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #5a75ac;
+}
+
+.button:active {
+  background-color: #e7d90a;
 }
 
 .footer {
@@ -43,6 +63,7 @@
   margin: 0;
   line-height: 1.15;
   font-size: 4rem;
+  padding: 2rem 0;
 }
 
 .title,
@@ -54,6 +75,60 @@
   margin: 4rem 0;
   line-height: 1.5;
   font-size: 1.5rem;
+}
+
+.messageContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: #222;
+  height: 30rem;
+  width: 100%;
+  padding: 1rem;
+  gap: 1rem;
+  border-radius: 0.5rem;
+}
+
+.message {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.input {
+  padding: 1rem;
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+  width: 100%;
+  border: none;
+  color: #fff;
+  background-color: #222;
+}
+
+.formButton {
+  background-color: #1a202c;
+  color: #fff;
+  border: 0;
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.formButton:hover {
+  background-color: #3a4761;
+}
+
+.formButton:active {
+  background-color: #e7d90a;
 }
 
 .code {
@@ -127,3 +202,4 @@
     filter: invert(1);
   }
 }
+
